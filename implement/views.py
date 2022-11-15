@@ -15,7 +15,6 @@ def index(request):
 
     form = PushdownAutomata(request.POST or None)
 
-    activate = True
     result = 'Validando'
     welcome = 'Bienvenido, '
     info = 'aquí podrás validar sus palíndromos de "a y b" Con el uso de un automata de pila'
@@ -25,7 +24,6 @@ def index(request):
     textBotton = 'Validar'
     playAudioValidate = False
     playAudioInValidate = False
-    # activate = True
 
     if form.is_valid():
 
@@ -43,7 +41,6 @@ def index(request):
             # return redirect('/')
 
     context = {
-        # 'activate': activateAudio(activate),
         'InvalidAudio': playAudioInValidate,
         'validAudio': playAudioValidate,
         'formWord': form,
